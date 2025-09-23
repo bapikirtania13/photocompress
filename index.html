@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Professional Image Processor - Free Online Image Editor & Converter</title>
+    <meta name="title" content="Professional Image Processor - Free Online Image Editor & Converter">
+    <meta name="description" content="Free online image processor to compress, resize, rotate, and convert images to JPEG, PNG, WebP formats. Professional image editing tools with PDF export.">
+    <meta name="keywords" content="image processor, image converter, image compressor, resize images, rotate images, JPEG converter, PNG converter, WebP converter, PDF export, online image editor, free image tools">
+    <meta name="author" content="Bapi Kirtania">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://imageprocessor.com/">
+    <meta property="og:title" content="Professional Image Processor - Free Online Image Editor">
+    <meta property="og:description" content="Free online image processor to compress, resize, rotate, and convert images. Professional image editing tools with PDF export.">
+    <meta property="og:image" content="https://imageprocessor.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://imageprocessor.com/">
+    <meta property="twitter:title" content="Professional Image Processor - Free Online Image Editor">
+    <meta property="twitter:description" content="Free online image processor to compress, resize, rotate, and convert images. Professional image editing tools with PDF export.">
+    <meta property="twitter:image" content="https://imageprocessor.com/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://imageprocessor.com/">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Professional Image Processor",
+      "description": "Free online image processor to compress, resize, rotate, and convert images to various formats including JPEG, PNG, WebP with PDF export functionality.",
+      "url": "https://imageprocessor.com",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Bapi Kirtania",
+        "email": "business.kirtania@gmail.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Professional Image Processor",
+        "email": "business.kirtania@gmail.com"
+      }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navigation">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-image"></i>
+                    <span>ImageProcessor</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="privacy.html" class="nav-link">Privacy</a>
+                    <a href="terms.html" class="nav-link">Terms</a>
+                </div>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header class="header" id="home">
+            <h1><i class="fas fa-image"></i> Professional Image Processor</h1>
+            <p>Upload, process, and download your images with professional tools - Free, Fast & Secure</p>
+            <div class="header-features">
+                <span><i class="fas fa-check"></i> No Registration Required</span>
+                <span><i class="fas fa-check"></i> 100% Client-Side Processing</span>
+                <span><i class="fas fa-check"></i> Multiple Formats Supported</span>
+            </div>
+        </header>
+
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-content">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <h3>Drag & Drop Images Here</h3>
+                    <p>or click to browse files</p>
+                    <input type="file" id="fileInput" multiple accept="image/*" hidden>
+                    <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                        <i class="fas fa-folder-open"></i> Browse Files
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Processing Controls -->
+        <section class="controls-section" id="controlsSection" style="display: none;">
+            <div class="controls-grid">
+                <!-- Compression Controls -->
+                <div class="control-group">
+                    <h3><i class="fas fa-compress-alt"></i> Compression</h3>
+                    <div class="compression-options">
+                        <div class="compression-mode">
+                            <input type="radio" id="qualityMode" name="compressionMode" value="quality" checked>
+                            <label for="qualityMode">Quality %</label>
+                            <div class="quality-control">
+                                <input type="range" id="qualitySlider" min="10" max="100" value="80">
+                                <span id="qualityValue">80</span>%
+                            </div>
+                        </div>
+                        <div class="compression-mode">
+                            <input type="radio" id="sizeMode" name="compressionMode" value="size">
+                            <label for="sizeMode">Target File Size</label>
+                            <div class="size-control">
+                                <input type="number" id="targetSize" min="1" max="10240" value="500" class="size-input">
+                                <select id="sizeUnit" class="size-unit">
+                                    <option value="KB">KB</option>
+                                    <option value="MB">MB</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="compression-info">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="compressionInfo">Quality mode: Higher % = better quality, larger file</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resize Controls -->
+                <div class="control-group">
+                    <h3><i class="fas fa-expand-arrows-alt"></i> Resize</h3>
+                    <div class="resize-options">
+                        <div class="resize-mode">
+                            <input type="radio" id="scaleMode" name="resizeMode" value="scale" checked>
+                            <label for="scaleMode">Scale %</label>
+                            <input type="number" id="scaleValue" min="10" max="500" value="100" class="scale-input">
+                        </div>
+                        <div class="resize-mode">
+                            <input type="radio" id="dimensionMode" name="resizeMode" value="dimension">
+                            <label for="dimensionMode">Dimensions</label>
+                            <div class="dimension-inputs">
+                                <input type="number" id="widthValue" placeholder="Width" class="dimension-input">
+                                <input type="number" id="heightValue" placeholder="Height" class="dimension-input">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="maintainAspect" checked>
+                                    Keep aspect ratio
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Format Controls -->
+                <div class="control-group">
+                    <h3><i class="fas fa-file-image"></i> Format</h3>
+                    <select id="formatSelect">
+                        <option value="jpeg">JPEG</option>
+                        <option value="png">PNG</option>
+                        <option value="webp">WebP</option>
+                        <option value="chrome">Chrome (Manual Size)</option>
+                    </select>
+                </div>
+
+                <!-- Rotation Controls -->
+                <div class="control-group">
+                    <h3><i class="fas fa-undo"></i> Rotation</h3>
+                    <div class="rotation-buttons">
+                        <button class="rotate-btn" data-angle="-90"><i class="fas fa-undo"></i> -90°</button>
+                        <button class="rotate-btn" data-angle="90"><i class="fas fa-redo"></i> 90°</button>
+                        <button class="rotate-btn" data-angle="180"><i class="fas fa-sync"></i> 180°</button>
+                        <button class="rotate-btn" data-angle="0"><i class="fas fa-rotate-left"></i> Reset</button>
+                    </div>
+                    <div class="rotation-display">
+                        Current rotation: <span id="rotationValue">0°</span>
+                    </div>
+                </div>
+
+                <!-- Locked Crop for ID Photo -->
+                <div class="control-group">
+                    <h3><i class="fas fa-id-card"></i> ID Photo Crop</h3>
+                    <div class="crop-controls">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="enableIdCrop">
+                            Enable ID Photo Crop (3.5cm × 4.5cm)
+                        </label>
+                        <div class="id-crop-inputs" id="idCropInputs" style="display: none;">
+                            <h4><i class="fas fa-hand-pointer"></i> Manual Position Adjustment</h4>
+                            <div class="crop-status-message" id="cropStatusMessage" style="display: none;">
+                                <i class="fas fa-info-circle"></i>
+                                <strong>Upload an image first to use manual positioning</strong>
+                            </div>
+                            
+                            <!-- Zoom Control -->
+                            <div class="zoom-controls">
+                                <h5><i class="fas fa-search-plus"></i> Zoom Control</h5>
+                                <div class="crop-row">
+                                    <label>Zoom:</label>
+                                    <input type="range" id="zoomSlider" min="25" max="500" value="100" class="crop-slider">
+                                    <div class="manual-zoom-input">
+                                        <input type="number" id="manualZoomInput" min="25" max="500" value="100" class="zoom-number-input">
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                                <div class="zoom-buttons">
+                                    <button type="button" class="zoom-btn" data-zoom="25"><i class="fas fa-compress-arrows-alt"></i> Fit All</button>
+                                    <button type="button" class="zoom-btn" data-zoom="50"><i class="fas fa-search-minus"></i> 50%</button>
+                                    <button type="button" class="zoom-btn" data-zoom="100"><i class="fas fa-expand-arrows-alt"></i> 100%</button>
+                                    <button type="button" class="zoom-btn" data-zoom="200"><i class="fas fa-search-plus"></i> 200%</button>
+                                    <button type="button" class="zoom-btn" data-zoom="400"><i class="fas fa-plus"></i> 400%</button>
+                                </div>
+                                <div class="zoom-info">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Current zoom: <strong id="currentZoomDisplay">100%</strong> | Use slider, buttons, or type exact percentage</span>
+                                </div>
+                            </div>
+                            
+                            <div class="crop-row">
+                                <label>Position X:</label>
+                                <input type="range" id="idCropX" min="0" value="0" class="crop-slider">
+                                <span id="idCropXValue">0</span>px
+                            </div>
+                            <div class="crop-row">
+                                <label>Position Y:</label>
+                                <input type="range" id="idCropY" min="0" value="0" class="crop-slider">
+                                <span id="idCropYValue">0</span>px
+                            </div>
+                            <div class="crop-position-info">
+                                <i class="fas fa-info-circle"></i>
+                                <strong>Tip:</strong> Use zoom to see details, then use sliders to position the crop frame exactly where you want it.
+                            </div>
+                            <div class="crop-preview-section" id="cropPreviewSection" style="display: none;">
+                                <h5><i class="fas fa-eye"></i> Live Preview with Zoom</h5>
+                                <div class="preview-container">
+                                    <div class="preview-viewport" id="previewViewport">
+                                        <canvas id="cropPreviewCanvas" width="206" height="265"></canvas>
+                                        <div class="crop-frame-overlay" id="cropFrameOverlay"></div>
+                                    </div>
+                                    <div class="preview-info">
+                                        <span>Preview: 3.5cm × 4.5cm at <span id="previewZoomLevel">100%</span> zoom</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="crop-info id-crop-info">
+                            <strong><i class="fas fa-info-circle"></i> Perfect for:</strong><br>
+                            • Passport photos<br>
+                            • ID cards<br>
+                            • Official documents<br>
+                            • Standard 3.5cm × 4.5cm dimensions at 300 DPI
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="processBtn" class="btn btn-primary">
+                    <i class="fas fa-magic"></i> Process Images
+                </button>
+                <button id="resetBtn" class="btn btn-secondary">
+                    <i class="fas fa-refresh"></i> Reset
+                </button>
+            </div>
+        </section>
+
+        <!-- Preview Section -->
+        <section class="preview-section" id="previewSection" style="display: none;">
+            <h2><i class="fas fa-eye"></i> Preview & Download</h2>
+            <div class="preview-grid" id="previewGrid"></div>
+            
+            <!-- Download Options -->
+            <div class="download-section">
+                <button id="downloadAllBtn" class="btn btn-success">
+                    <i class="fas fa-download"></i> Download All as ZIP
+                </button>
+                <button id="exportPdfBtn" class="btn btn-info">
+                    <i class="fas fa-file-pdf"></i> Export as PDF
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-image"></i> Professional Image Processor</h3>
+                    <p>Free online image processing tools for compression, resizing, format conversion, and more. Professional-grade image editing in your browser.</p>
+                    <div class="footer-features">
+                        <span><i class="fas fa-shield-alt"></i> Secure & Private</span>
+                        <span><i class="fas fa-bolt"></i> Fast Processing</span>
+                        <span><i class="fas fa-mobile-alt"></i> Mobile Friendly</span>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home" onclick="scrollToTop()">Home</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <div class="footer-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms & Conditions</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:business.kirtania@gmail.com">business.kirtania@gmail.com</a></p>
+                        <p><i class="fas fa-clock"></i> Available 24/7</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Professional Image Processor | Developed by <strong>Bapi Kirtania</strong> | All Rights Reserved</p>
+                <p class="disclaimer-text">Images are processed locally in your browser. We do not store or transmit your images.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Processing images...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
